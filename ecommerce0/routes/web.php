@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // admin
 
-Route::get('/dashboard', [HomeController::class, 'index'])->name('admin.dashboard');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('dashboard', [HomeController::class, 'index'])->name('admin.dashboard');
+    
+    // category
+    Route::group(['prefix' => 'category'], function () {
+        Route::get('index', [CategoryController::class, 'index'])->name('admin.category.index');
+    });
+});

@@ -13,8 +13,7 @@
   <div class="wrapper">
     @include('admin.includes.navbar')   
     @include('admin.includes.sidebar')    
-    @include('admin.includes.content_top')   
-    {{-- @yield('content')        --}}
+    @include('admin.includes.content_top')       
     @include('admin.includes.footer')    
   </div>  
   @include('admin.includes.scripts')
