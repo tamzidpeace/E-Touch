@@ -35,5 +35,6 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('index', [CategoryController::class, 'index'])->name('admin.category.index');
         Route::post('make', [CategoryController::class, 'make'])->name('admin.category.make');
         Route::get('update', [CategoryController::class, 'update'])->name('admin.category.update');
+        Route::post('destroy', [CategoryController::class, 'destroy'])->name('admin.category.destroy');
     });
 });

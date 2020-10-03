@@ -49,7 +49,7 @@
                     </thead>
                     <tbody>
                          <?php $x = 1?>
-                         @foreach ($categories as $item)                         
+                         @foreach ($categories as $item)
                          <tr>
                               <td>{{ $x++ }}</td>
                               <td>{{ $item->name }}</td>
@@ -61,7 +61,8 @@
                                         </i>
                                         Edit
                                    </a>
-                                   <a onclick="delete({{ $item->id }});" class="btn btn-danger btn-sm" href="#" data-toggle="modal" 
+                                   <a onclick="deleteCat({{ $item->id }})" id="deleteCategroy"
+                                        class="btn btn-danger btn-sm" href="#" data-toggle="modal"
                                         data-target="#deleteModal">
                                         <i class="fas fa-trash">
                                         </i>
@@ -80,7 +81,7 @@
 
      <!-- /.card-body -->
 
-     
+
      <!-- add,edit Modal -->
      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
           aria-hidden="true">
@@ -131,38 +132,34 @@
                               <span aria-hidden="true">&times;</span>
                          </button>
                     </div>
-                    <div class="modal-body">
+                    <form action="{{ route('admin.category.destroy') }}" method="POST">
+                         @csrf
 
-                         <form action="{{ route('admin.category.make') }}" method="POST">
-                              @csrf
-                              
-                              <input type="hidden" name="mId" id="mID" value="0">
-
-                    </div>
-                    <div class="modal-footer">
-                         <button type="submit" id="submit" class="btn btn-primary">YES</button>
-                         <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
-                         </form>
-                    </div>
+                         <input type="hidden" name="dID" id="dID" value="0">                         
+                         <div class="modal-footer">
+                              <button type="submit" id="submit" class="btn btn-primary">YES</button>
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
+                    </form>
                </div>
           </div>
      </div>
-     {{-- end delete modal --}}
+</div>
+{{-- end delete modal --}}
 
 
-     @endsection
+@endsection
 
-     @section('scripts')
+@section('scripts')
 
-     <script>
-          $(document).ready(function() {
+<script>
+     $(document).ready(function() {
           $('#dashboardCard').html('');
      });
      
-     </script>
+</script>
 
-     <script>
-          $('#myTable').DataTable({
+<script>
+     $('#myTable').DataTable({
       "paging": true,
       "lengthChange": true,
       "searching": true,
@@ -171,33 +168,33 @@
       "autoWidth": true,
       "responsive": true,
     });
-     </script>
+</script>
 
-     <script>
-          function edit(id) {
+<script>
+     function edit(id) {
                event.preventDefault();
-               console.log(id);               
+               //console.log(id);               
                $.ajax({
                     url: 'update',
                     type: 'GET',
                     dataType: 'JSON',
                     data: {id: id},
                     success: function(result){
-                         console.log(result);
+                         //console.log(result);
                          $('#name').val(result.name);
                          $('#des').val(result.description);                         
                          $('#mID').val(result.id);
                     }
                });
           }
-                    
-     </script>
 
-     <script>
-          function delete(id) {
+          
+          function deleteCat(id) {
                event.preventDefault();
-               console.log(123);
-          }
-     </script>
+               $('#dID').val(id);
+               console.log($('#dID').val());
+               
+          }                    
+</script>
 
-     @endsection
+@endsection
