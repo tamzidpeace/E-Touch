@@ -94,7 +94,7 @@
             </li>
             {{-- for later --}}
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="{{ route('admin.category.index') }}" class="nav-link">
                 <i class="fas fa-circle nav-icon"></i>
                 <p>Category</p>
               </a>

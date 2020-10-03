@@ -86,7 +86,8 @@
 
     </div>
 
-    <div class="container">
+    
+    <div style="background-image: url('images/bg3')" class="container">
       <div class="row">
       
           @yield('content')
@@ -96,7 +97,8 @@
 
 
 
-
   </section>
+
+  
 
 </div>

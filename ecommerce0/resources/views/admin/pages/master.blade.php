@@ -10,6 +10,7 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+  @include('sweet::alert')
   <div class="wrapper">
     @include('admin.includes.navbar')   
     @include('admin.includes.sidebar')    
