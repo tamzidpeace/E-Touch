@@ -13,7 +13,8 @@
   @include('sweet::alert')
   <div class="wrapper">
     @include('admin.includes.navbar')   
-    @include('admin.includes.sidebar')    
+    @include('admin.includes.sidebar')  
+    @yield('header_content')  
     @include('admin.includes.content_top')       
     @include('admin.includes.footer')    
   </div>  
