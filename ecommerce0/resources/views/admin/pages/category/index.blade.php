@@ -1,4 +1,4 @@
-@extends('admin.pages.master')
+@extends('admin.pages.master2')
 
 @section('styles')
 
@@ -27,13 +27,13 @@
           </div>
           @endif
           <div class="card-header">
-               <h3 class="card-title">Categories Table</h3>
+               <h3 class="card-title">Categories Table</h3>               
 
-               <button class="float-right" type="button" class="btn btn-primary" data-toggle="modal"
+               <button  type="button" class="btn btn-primary float-right" data-toggle="modal"
                     data-target="#exampleModal">
                     <i class="fas fa-plus-circle"></i>
                </button>
-               <a href=""></a>
+               
           </div>
           <!-- /.card-header -->
           <div class="card-body">

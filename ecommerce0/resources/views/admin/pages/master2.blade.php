@@ -12,8 +12,8 @@
 <body class="hold-transition sidebar-mini layout-fixed">  
   <div class="wrapper">
     @include('admin.includes.navbar')   
-    @include('admin.includes.sidebar')     
-    @include('admin.includes.content_top')       
+    @include('admin.includes.sidebar')        
+    @include('admin.includes.content_top2')       
     @include('admin.includes.footer')    
   </div>  
   @include('admin.includes.scripts')

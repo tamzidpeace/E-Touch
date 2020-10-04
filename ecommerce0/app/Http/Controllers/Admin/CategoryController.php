@@ -4,8 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Alert;
-use SweetAlert;
 use App\Models\Admin\Category;
 
 class CategoryController extends Controller
