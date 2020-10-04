@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,4 +38,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('update', [CategoryController::class, 'update'])->name('admin.category.update');
         Route::post('destroy', [CategoryController::class, 'destroy'])->name('admin.category.destroy');
     });
+
+    Route::group(['prefix' => 'product'], function(){
+        Route::get('make', [ProductController::class, 'make'])->name('admin.product.make');
+    } );
 });
