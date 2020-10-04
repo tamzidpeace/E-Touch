@@ -47,6 +47,8 @@ class CategoryController extends Controller
         try {
             $category = Category::findOrFail($request->dID);
             $category->delete();
+            session_start();
+            $_SESSION["data"] = "success";
             return back();
         } catch(Exception $e) {
             return $e;

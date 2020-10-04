@@ -7,7 +7,6 @@
 @section('content')
 
 
-
 <div style="width: 100%" class="card">
      <div class="col-md-12 col-xl-12">
           @if ($errors->any())
@@ -135,10 +134,11 @@
                     <form action="{{ route('admin.category.destroy') }}" method="POST">
                          @csrf
 
-                         <input type="hidden" name="dID" id="dID" value="0">                         
+                         <input type="hidden" name="dID" id="dID" value="0">
                          <div class="modal-footer">
-                              <button type="submit" id="submit" class="btn btn-primary">YES</button>
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
+                              <button type="submit" id="deleteSubmit" class="btn btn-primary">YES</button>
+                              <button type="button" id="deleteNo" class="btn btn-secondary"
+                                   data-dismiss="modal">NO</button>
                     </form>
                </div>
           </div>
@@ -192,9 +192,19 @@
           function deleteCat(id) {
                event.preventDefault();
                $('#dID').val(id);
-               console.log($('#dID').val());
+               //console.log($('#dID').val());
+               //swal("Done", "", "success");
                
-          }                    
+          }
+          
+          $("#deleteSubmit, #submit").on("click", function() {               
+               swal("Done", "", "success");   
+               //let session = 123;
+               //console.log(session);            
+           });
+           
 </script>
+
+
 
 @endsection
