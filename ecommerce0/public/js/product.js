@@ -20,4 +20,19 @@ function deleteProduct(id) {
     
 }
 
+function view(id) {
+    //console.log(id);
+    let product_id = id;
+    $.ajax({
+        url: 'view',
+        dataType: 'HTML',
+        type: 'GET',
+        data : {id: product_id},
+        success: function(result) {
+            //console.log(result);
+            //$('#productModalContent').html("hello");
+        }
+    });
+}
+
 // end delete product

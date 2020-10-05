@@ -77,4 +77,14 @@ class ProductController extends Controller
         $product->delete();
         return back()->with('products', $products);
     }
+
+    public function view(Request $request) {
+        return $request;
+        $product = Product::find($request->id);
+        $product_images = ProductImage::where('product_id', $product->id)->get();
+        $product_image_first = ProductImage::where('product_id', $product->id)->first();
+        $data = ['images' => $product_images, 'first_image' => $product_image_first, 'product' => $product];
+        
+        return view('admin.pages.product.view', compact('product', 'product_images', 'product_image_first'));
+    }
 }

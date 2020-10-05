@@ -36,15 +36,20 @@
                                    <td>{{ substr(strip_tags($item->description), 0, 30)   }}</td>
                                    <td>
                                         <div class="card" style="width: 60px; height:45px;">
-                                             <img src="{{ asset('images/product/'. $image_name[$y++]->name) }}" class="card-img-top" alt="...">                                             
+                                             <img src="{{ asset('images/product/'. $image_name[$y++]->name) }}"
+                                                  class="card-img-top" alt="...">
                                         </div>
                                    </td>
                                    <td>
-                                        <a class="btn btn-primary btn-sm" href="#">
+                                        {{-- <a onclick="view({{ $item->id }})" data-toggle="modal"
+                                             data-target="#productViewModal" id="viewProduct"
+                                             class="btn btn-info btn-sm">
                                              <i class="fas fa-folder">
                                              </i>
                                              View
-                                        </a>
+                                        </a> --}}
+                                        <a  class="btn btn-info btn-sm" href="{{ route('admin.product.view') $item->id }}"><i class="fas fa-folder"></i>View</a>
+
                                         <a onclick="edit({{ $item->id }})" data-toggle="modal"
                                              data-target="#exampleModal" id="editCategory" class="btn btn-info btn-sm">
                                              <i class="fas fa-pencil-alt">
@@ -69,34 +74,82 @@
                </div>
           </div>
      </div>
-</div>
+     {{-- models --}}
 
-{{-- models --}}
-{{-- delete modal --}}
-<div class="modal fade" id="productDeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-     <div class="modal-dialog" role="document">
-          <div class="modal-content">
-               <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Do you want to delete this Product?</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                         <span aria-hidden="true">&times;</span>
-                    </button>
+     {{-- view modal --}}
+     <div class="modal fade" id="productViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                    <div class="modal-header">
+                         <h5 class="modal-title" id="exampleModalLabel">Product Details</h5>
+                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                         </button>
+                    </div>
+
+                    <div class="card card-solid">
+                         <div class="card-body">
+                              <div class="row">
+                                   <div class="productModalContent" class="col-12 col-sm-6">
+
+                                        {{-- <h3>Name</h3>
+                                        <div class="col-12">
+                                             <img src="../../dist/img/prod-1.jpg" class="product-image"
+                                                  alt="Product Image">
+                                        </div>
+                                        <div class="col-12 product-image-thumbs">
+                                             <div class="product-image-thumb active"><img
+                                                       src="../../dist/img/prod-1.jpg" alt="Product Image"></div>
+
+                                        </div> --}}
+                                   </div>
+
+                              </div>
+
+                         </div>
+                         <!-- /.card-body -->
+                    </div>
+
                </div>
-               <form action="{{ route('admin.product.destroy') }}" method="POST">
-                    @csrf
-
-                    <input type="hidden" name="pID" id="pID" value="0">
-                    <div class="modal-footer">
-                         <button type="submit" id="deleteSubmit" class="btn btn-primary">YES</button>
-                         <button type="button" id="deleteNo" class="btn btn-secondary" data-dismiss="modal">NO</button>
-               </form>
           </div>
      </div>
+
+
+
+
+
+     {{-- end view modal
+
+          {{-- delete modal --}}
+     <div class="modal fade" id="productDeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                    <div class="modal-header">
+                         <h5 class="modal-title" id="exampleModalLabel">Do you want to delete this Product?</h5>
+                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                         </button>
+                    </div>
+                    <form action="{{ route('admin.product.destroy') }}" method="POST">
+                         @csrf
+
+                         <input type="hidden" name="pID" id="pID" value="0">
+                         <div class="modal-footer">
+                              <button type="submit" id="deleteSubmit" class="btn btn-primary">YES</button>
+                              <button type="button" id="deleteNo" class="btn btn-secondary"
+                                   data-dismiss="modal">NO</button>
+                    </form>
+               </div>
+          </div>
+     </div>
+     {{-- end delete modal --}}
+
+     {{-- end modals --}}
 </div>
 
 
-{{-- end delete modal --}}
 
 
 
