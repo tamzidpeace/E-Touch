@@ -88,11 +88,11 @@
 
     
     <div class="container">
-      <div class="row">
+      {{-- <div class="row"> --}}
       
           @yield('content')
       
-      </div>
+      {{-- </div> --}}
     </div>
 
 

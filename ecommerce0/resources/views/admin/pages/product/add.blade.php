@@ -12,10 +12,8 @@
           <h4 class="card-title"><strong>Add New Product</strong></h4>
 
           <div class="card-tools">
-               <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                         class="fas fa-minus"></i></button>
-               <button type="button" class="btn btn-tool" data-card-widget="remove"><i
-                         class="fas fa-times"></i></button>
+               
+               {{-- <a href="{{ route('admin.product.index') }}"><i class="fas fa-chevron-circle-left">Products</i></a> --}}
           </div>
      </div>
      <!-- /.card-header -->

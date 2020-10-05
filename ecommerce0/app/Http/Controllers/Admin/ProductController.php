@@ -13,6 +13,16 @@ class ProductController extends Controller
 {
     public function index()
     {
+        $products = Product::all();
+        $product_id = DB::table('product_images')->distinct()->get(['product_id']);
+        for ($i=0; $i < count($product_id); $i++) {
+            $image_name[$i] = ProductImage::select('name')->where('product_id', $product_id[$i]->product_id)->first();
+        }
+        if (isset($image_name)) {
+            return view('admin.pages.product.index', compact('products', 'image_name'));
+        } else {
+            return view('admin.pages.product.index', compact('products'));
+        }
     }
 
     public function make()
@@ -46,11 +56,25 @@ class ProductController extends Controller
                 $name = time() . '_'  . $file->getClientOriginalName();
                 $product_image->name = $name;
                 $product_image->product_id = $id;
-                $file->move(public_path().'/images/product', $name);                
+                $file->move(public_path().'/images/product', $name);
                 $product_image->save();
             }
         }
                             
         return back();
+    }
+
+    public function destroy(Request $request)
+    {
+        $products = Product::all();
+        $product = Product::find($request->pID);
+        $product_images = ProductImage::where('product_id', $product->id)->get();
+        foreach ($product_images as $item) {
+            $item->delete();
+            unlink('images/product/'. $item->name);
+        }
+        unlink('files/product/'. $product->file);
+        $product->delete();
+        return back()->with('products', $products);
     }
 }
