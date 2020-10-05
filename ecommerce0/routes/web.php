@@ -41,5 +41,6 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::group(['prefix' => 'product'], function(){
         Route::get('make', [ProductController::class, 'make'])->name('admin.product.make');
+        Route::post('make-confirm', [ProductController::class, 'makeConfirm'])->name('admin.product.make-confirm');
     } );
 });
