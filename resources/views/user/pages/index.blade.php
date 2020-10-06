@@ -60,7 +60,7 @@
                                    <figure>
                                         <div class="snipcart-item block">
                                              <div class="snipcart-thumb">
-                                                  <a href="single.html"><img title=" " alt=" "
+                                                  <a href="{{ route('user.product-details', ['id' => $item->id]) }}"><img title=" " alt=" "
                                                             src="{{ asset('public/images/product/'. $image_names[$x++]->name) }}"></a>
                                                   <p>{{ $item->name }}</p>
                                                   <h4>$35.99 <span>$55.00</span></h4>
@@ -78,8 +78,9 @@
                                                             <input type="hidden" name="currency_code" value="USD">
                                                             <input type="hidden" name="return" value=" ">
                                                             <input type="hidden" name="cancel_return" value=" ">
-                                                            <input type="submit" name="submit" value="Add to cart"
-                                                                 class="button">
+                                                            {{-- <input type="submit" name="submit" value="Add to cart"
+                                                                 class="button"> --}}
+                                                            <a href="{{ route('user.product-details', ['id' => $item->id]) }}" class="btn btn-primary">Details</a>
                                                        </fieldset>
                                                   </form>
                                              </div>

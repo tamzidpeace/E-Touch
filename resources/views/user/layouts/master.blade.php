@@ -7,6 +7,7 @@
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <title>E-Commerce</title>
      @include('user.includes.styles')
+     @yield('styles')
      @include('user.includes.header')
      @include('user.includes.navigation')
 </head>
@@ -17,6 +18,7 @@
      </div>
      @include('user.includes.footer')
      @include('user.includes.scripts')
+     @yield('scripts')
 </body>
 
 </html>
