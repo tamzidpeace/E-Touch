@@ -14,14 +14,15 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
+        $categories = Category::all();
         $product_id = DB::table('product_images')->distinct()->get(['product_id']);
         for ($i=0; $i < count($product_id); $i++) {
             $image_name[$i] = ProductImage::select('name')->where('product_id', $product_id[$i]->product_id)->first();
         }
         if (isset($image_name)) {
-            return view('admin.pages.product.index', compact('products', 'image_name'));
+            return view('admin.pages.product.index', compact('products', 'image_name', 'categories'));
         } else {
-            return view('admin.pages.product.index', compact('products'));
+            return view('admin.pages.product.index', compact('products', 'categories'));
         }
     }
 
@@ -31,24 +32,51 @@ class ProductController extends Controller
         return view('admin.pages.product.add', compact('categories'));
     }
 
+    public function makeAjax(Request $request)
+    {
+        $product = Product::findOrFail($request->id);
+        return \response()->json($product);
+    }
+
     public function makeConfirm(Request $request)
     {
-        $product = new Product();
-       
+        if ($request->update == 1) {
+            $product = Product::findOrFail($request->product_id);
+            $product_pre_images_id = ProductImage::where('product_id', $request->product_id)->pluck('id');
+            $product_pre_images = ProductImage::where('product_id', $request->product_id)->get();
 
+            if ($request->hasfile('p_images')) {
+                ProductImage::destroy($product_pre_images_id);
+                foreach ($product_pre_images as $item) {
+                    unlink('images/product/'. $item->name);
+                }
+            }
+            if ($request->hasfile('file')) {
+                unlink('files/product/'. $product->file);
+            }
+        } else {
+            $product = new Product();
+        }
+        
         $product->name = $request->name;
         $product->category_id = $request->category;
-        $product->description = $request->description;
+        $product->description = strip_tags($request->description);
         
-        $file = $request->file('file');
-        $file_name = time() . '_' . $file->getClientOriginalName();
-        $file->move('files/product', $file_name);
-
-        $product->file = $file_name;
+        if ($request->hasfile('file')) {            
+            $file = $request->file('file');
+            $file_name = time() . '_' . $file->getClientOriginalName();
+            $file->move('files/product', $file_name);
+            $product->file = $file_name;
+        }
+        
         $product->save();
 
-        $last_product = DB::table('products')->latest()->first();
-        $id = $last_product->id;
+        if ($request->update == 1) {
+            $id = $request->product_id;
+        } else {
+            $last_product = DB::table('products')->latest()->first();
+            $id = $last_product->id;
+        }
                 
         if ($request->hasfile('p_images')) {
             foreach ($request->file('p_images') as $file) {
@@ -78,8 +106,8 @@ class ProductController extends Controller
         return back()->with('products', $products);
     }
 
-    public function view(Request $request) {
-        return $request;
+    public function view(Request $request)
+    {
         $product = Product::find($request->id);
         $product_images = ProductImage::where('product_id', $product->id)->get();
         $product_image_first = ProductImage::where('product_id', $product->id)->first();

@@ -45,5 +45,6 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('make-confirm', [ProductController::class, 'makeConfirm'])->name('admin.product.make-confirm');
         Route::post('destroy', [ProductController::class, 'destroy'])->name('admin.product.destroy');
         Route::get('view', [ProductController::class, 'view'])->name('admin.product.view');
+        Route::get('make-ajax', [ProductController::class, 'makeAjax'])->name('admin.product.make-ajax');
     } );
 });

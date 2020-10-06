@@ -36,3 +36,19 @@ function view(id) {
 }
 
 // end delete product
+
+function edit(id) {    
+    $('#editProductId').val(id);
+    //console.log($('#editProductId').val());
+    $.ajax({
+        url : 'make-ajax',
+        data : {id:id},
+        dataType : 'JSON',
+        type : 'GET',
+        success : function(result) {            
+            $('#editProductName').val(result.name);
+            $('#editProductDesc2').text(result.description);
+            //console.log( $('#editProductDesc2').text());
+        }
+    });
+}
