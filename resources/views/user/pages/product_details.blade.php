@@ -27,8 +27,8 @@
                     <div class="row">
                          <?php $x=0; ?>
                          @foreach ($product_images as $item)
-                         <div class="col-md-2">
-                              <img class="productExtraImages" style="height: 40px; width:40px;" src="{{ asset('public/images/product/'. $item->name) }}" alt="">
+                         <div id="productExtraImage"  class="col-md-2 productExtraImages">
+                              <img onclick="getImageID({{ $item->id }})" style="height: 40px; width:40px;" src="{{ asset('public/images/product/'. $item->name) }}" alt="">
                               <form action="#">
                                    <input type="hidden" name="" id="image_no" value="{{ $x++ }}">
                               </form>
@@ -83,26 +83,21 @@
 
 @section('scripts')
 
-{{-- <script>
-     $(document).ready(function() {
-          let product_id = $('#product_id').val();
+<script>               
+     function getImageID(id) {
+          //console.log(id);
           $.ajax({
-               url:'ajax_product_images',
-               type:'GET',
-               dataType: 'JSON',
-               data: {id:product_id},
-               success: function(result) {
-                     console.log(result);
-                    // $(".productExtraImages" ).click(function() {
-                    //      console.log(result[0].name);
-                    //      // var source = '{!! asset('public/images/product/'  ') !!}';
-                         
-                    // $('#example').attr("src", source);
-                    // //public/images/product/" + result[0].name
-               });
-            }
-          })          
-     });
-</script> --}}
+               url : 'ajax_product_images',
+               type : 'GET',
+               dataType: 'json',
+               data : {id:id},
+               success : function(result) {
+                    //console.log(result.image.name);
+                    let source =  "http://" + result.server+ "/ecommerce/public/images/product/" + result.image.name;
+                    $('#example').attr("src", source);
+               }
+          })
+     }
+</script>
     
 @endsection

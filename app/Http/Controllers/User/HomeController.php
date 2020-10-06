@@ -47,6 +47,9 @@ class HomeController extends Controller
     }
 
     public function ajaxProductImages(Request $request) {
-        return ProductImage::where('product_id', $request->id)->get();
+        $server = $_SERVER['SERVER_NAME'];
+        $image =  ProductImage::findOrFail($request->id);
+        $data = ['server' => $server, 'image' => $image];        
+        return \response(json_encode($data));
     }
 }

@@ -34,7 +34,7 @@
      <div class="row">
           <div class="col-md-2 products-left">
                <div style="margin-top: 40px;" class="categories">
-                    <h2>Categories</h2>
+                    <h3 style="text-align:center;">Categories</h3>
                     <ul class="cate">
                          @foreach ($categories as $item)
                          <li><a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i>{{ $item->name }}</a></li>
