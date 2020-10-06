@@ -45,4 +45,8 @@ class HomeController extends Controller
             \compact('product', 'product_images', 'product_image_first', 'similar_products', 'similar_product_images')
         );
     }
+
+    public function ajaxProductImages(Request $request) {
+        return ProductImage::where('product_id', $request->id)->get();
+    }
 }

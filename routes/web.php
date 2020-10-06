@@ -52,4 +52,5 @@ Route::group(['prefix' => 'admin'], function () {
 Route::group(['prefix' => 'user'], function () {
     Route::get('home', [App\Http\Controllers\User\HomeController::class, 'index'])->name('user.home');
     Route::get('product_details', [App\Http\Controllers\User\HomeController::class, 'productDetails'])->name('user.product-details');
+    Route::get('ajax_product_images', [App\Http\Controllers\User\HomeController::class, 'ajaxProductImages'])->name('user.product.ajax-product-images');
 });

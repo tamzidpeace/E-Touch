@@ -13,7 +13,7 @@
                               </div> 
                               <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                                    <ul class="nav navbar-nav">
-                                        <li class="active"><a href="index.html" class="act">Home</a></li>	
+                                        <li class="active"><a href="{{ route('user.home') }}" class="act">Home</a></li>	
                                         <!-- Mega Menu -->
                                         <li class="dropdown">
                                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Groceries<b class="caret"></b></a>
