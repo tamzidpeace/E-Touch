@@ -48,3 +48,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('make-ajax', [ProductController::class, 'makeAjax'])->name('admin.product.make-ajax');
     } );
 });
+
+Route::group(['prefix' => 'user'], function () {
+    Route::get('home', [App\Http\Controllers\User\HomeController::class, 'index'])->name('user.home');
+});
