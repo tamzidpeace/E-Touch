@@ -48,11 +48,11 @@ class ProductController extends Controller
             if ($request->hasfile('p_images')) {
                 ProductImage::destroy($product_pre_images_id);
                 foreach ($product_pre_images as $item) {
-                    unlink('images/product/'. $item->name);
+                    unlink('public/images/product/'. $item->name);
                 }
             }
             if ($request->hasfile('file')) {
-                unlink('files/product/'. $product->file);
+                unlink('public/files/product/'. $product->file);
             }
         } else {
             $product = new Product();
@@ -65,7 +65,7 @@ class ProductController extends Controller
         if ($request->hasfile('file')) {            
             $file = $request->file('file');
             $file_name = time() . '_' . $file->getClientOriginalName();
-            $file->move('files/product', $file_name);
+            $file->move('public/files/product', $file_name);
             $product->file = $file_name;
         }
         
@@ -84,7 +84,7 @@ class ProductController extends Controller
                 $name = time() . '_'  . $file->getClientOriginalName();
                 $product_image->name = $name;
                 $product_image->product_id = $id;
-                $file->move(public_path().'/images/product', $name);
+                $file->move('public/images/product', $name);
                 $product_image->save();
             }
         }
@@ -99,9 +99,9 @@ class ProductController extends Controller
         $product_images = ProductImage::where('product_id', $product->id)->get();
         foreach ($product_images as $item) {
             $item->delete();
-            unlink('images/product/'. $item->name);
+            unlink('public/images/product/'. $item->name);
         }
-        unlink('files/product/'. $product->file);
+        unlink('public/files/product/'. $product->file);
         $product->delete();
         return back()->with('products', $products);
     }
