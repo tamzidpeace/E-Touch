@@ -17,8 +17,9 @@
                <div class="col-md-8 agileinfo_single_right">
                     <h2>{{ $product->name }}</h2>
                     <div class="w3agile_description">
+                         <h4 > Category: <small style="color: black"><strong>{{ $product->category->name }}</strong></small></h4>  <br>
                          <h4>Description :</h4>
-                         <p>{{$product->description}}</p>
+                         <p style="color: black">{{$product->description}}</p>
                     </div>
                </div>
 
@@ -59,8 +60,14 @@
                                                   <a href="{{ route('user.product-details', ['id' => $item->id]) }}"><img
                                                             title=" " alt=" "
                                                             src="{{ asset('public/images/product/'.$similar_product_images[$i++]->name) }}"></a>
-                                                  <p>{{ $item->name }}</p>
-                                                  <h4>$35.99 <span>$55.00</span></h4>
+                                                  <p><strong>{{ $item->name }}</strong></p>                                                  
+                                             </div>
+                                             <div class="snipcart-details top_brand_home_details">
+                                                  <form action="#" method="post">
+                                                       <fieldset>                                                                                                                      
+                                                            <a href="{{ route('user.product-details', ['id' => $item->id]) }}" class="btn btn-primary">Details</a>
+                                                       </fieldset>
+                                                  </form>
                                              </div>
                                         </div>
                                    </figure>

@@ -37,7 +37,7 @@
                     <h3 style="text-align:center;">Categories</h3>
                     <ul class="cate">
                          @foreach ($categories as $item)
-                         <li><a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i>{{ $item->name }}</a></li>
+                         <li ><a style="color: black"\ href="#"><i  class="fa fa-arrow-right" aria-hidden="true"></i>{{ $item->name }}</a></li>
                          @endforeach
                     </ul>
                </div>
@@ -55,8 +55,7 @@
                                              <div class="snipcart-thumb">
                                                   <a href="{{ route('user.product-details', ['id' => $item->id]) }}"><img title=" " alt=" "
                                                             src="{{ asset('public/images/product/'. $image_names[$x++]->name) }}"></a>
-                                                  <p>{{ $item->name }}</p>
-                                                  <h4>$35.99 <span>$55.00</span></h4>
+                                                  <p><strong>{{ $item->name }}</strong></p>                                                  
                                              </div>
                                              <div class="snipcart-details top_brand_home_details">
                                                   <form action="#" method="post">

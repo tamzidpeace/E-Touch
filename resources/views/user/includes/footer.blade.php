@@ -16,12 +16,10 @@
                     <ul class="info"> 
                          <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="about.html">About Us</a></li>
                          <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="contact.html">Contact Us</a></li>
-                         <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="short-codes.html">Short Codes</a></li>
-                         <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="faq.html">FAQ's</a></li>
-                         <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="products.html">Special Products</a></li>
+                         
                     </ul>
                </div>
-               <div class="col-md-3 w3_footer_grid">
+               {{-- <div class="col-md-3 w3_footer_grid">
                     <h3>Category</h3>
                     <ul class="info"> 
                          <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="groceries.html">Groceries</a></li>
@@ -30,8 +28,8 @@
                          <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="packagedfoods.html">Packaged Foods</a></li>
                          <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="beverages.html">Beverages</a></li>
                     </ul>
-               </div>
-               <div class="col-md-3 w3_footer_grid">
+               </div> --}}
+               {{-- <div class="col-md-3 w3_footer_grid">
                     <h3>Profile</h3>
                     <ul class="info"> 
                          <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="products.html">Store</a></li>
@@ -41,7 +39,7 @@
                     </ul>
                     
                     
-               </div>
+               </div> --}}
                <div class="clearfix"> </div>
           </div>
      </div>
@@ -49,7 +47,7 @@
      <div class="footer-copy">
           
           <div class="container">
-               <p>© 2017 Super Market. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+               <p>© 2020 Super Market. All rights reserved | Developed By <a href="#">atiar.info</a></p>
           </div>
      </div>
      

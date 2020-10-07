@@ -8,8 +8,8 @@
      <title>E-Commerce</title>
      @include('user.includes.styles')
      @yield('styles')
-     @include('user.includes.header')
      @include('user.includes.navigation')
+     @include('user.includes.header')    
 </head>
 
 <body>
