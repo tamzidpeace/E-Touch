@@ -43,14 +43,12 @@
 <!-- new -->
 <div class="newproducts-w3agile">
      <div class="container">
-          <h3>Similar Products</h3>
-          @foreach ($similar_products as $item)
-
-          @endforeach
+          <h3>Similar Products</h3>          
           <div class="agile_top_brands_grids">
                <?php $i=0; ?>
+               @if (isset($similar_product_images))
                @foreach ($similar_products as $item)
-
+               
                <div class="col-md-3 top_brand_left-1">
                     <div class="hover14 column">
                          <div class="agile_top_brand_left_grid">
@@ -69,8 +67,10 @@
                               </div>
                          </div>
                     </div>
-               </div>
+               </div>   
+               
                @endforeach
+               @endif               
 
 
                <div class="clearfix"> </div>

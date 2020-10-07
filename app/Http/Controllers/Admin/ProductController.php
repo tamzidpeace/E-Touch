@@ -40,6 +40,7 @@ class ProductController extends Controller
 
     public function makeConfirm(Request $request)
     {
+        
         if ($request->update == 1) {
             $product = Product::findOrFail($request->product_id);
             $product_pre_images_id = ProductImage::where('product_id', $request->product_id)->pluck('id');

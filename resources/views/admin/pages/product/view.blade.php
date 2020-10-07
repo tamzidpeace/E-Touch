@@ -46,7 +46,7 @@
              <div class="col-12 product-image-thumbs">
                   @foreach ($product_images as $item)
                   <div class="product-image-thumb active">
-                       <img src="{{ asset('images/product/'. $item->name) }}" alt="Product Image"></div>
+                       <img src="{{ asset('public/images/product/'. $item->name) }}" alt="Product Image"></div>
                   @endforeach
                
              </div>

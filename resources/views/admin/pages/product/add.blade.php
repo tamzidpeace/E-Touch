@@ -12,8 +12,9 @@
           <h4 class="card-title"><strong>Add New Product</strong></h4>
 
           <div class="card-tools">
-               
-               {{-- <a href="{{ route('admin.product.index') }}"><i class="fas fa-chevron-circle-left">Products</i></a> --}}
+
+               {{-- <a href="{{ route('admin.product.index') }}"><i class="fas fa-chevron-circle-left">Products</i></a>
+               --}}
           </div>
      </div>
      <!-- /.card-header -->
@@ -42,10 +43,20 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-md-6">
-                         <div class="form-group">
+                         {{-- <div class="form-group">
                               <label for="files">Select Images</label>
                               <input class="form-control" type="file" id="pImages" name="p_images[]" multiple>
+                         </div> --}}
+
+                         <div class="form-group">
+                              <span class="btn btn-primary add_field">+</span>
+                              <span class="btn btn-danger remove_field">-</span>
+
+                              <div class="input_holder">
+                                   <input type="file" name="p_images[]" id="input_clone" />
+                              </div>
                          </div>
+
                     </div>
                     <!-- /.col -->
                     <div class="col-md-6">
@@ -62,8 +73,6 @@
                                    <textarea name="description" id="pDescription" class="textarea"
                                         placeholder="Place some text here" style=""></textarea>
                               </div>
-
-
                          </div>
                          <button type="submit" class="btn btn-primary float-right">Submit</button>
                     </div>

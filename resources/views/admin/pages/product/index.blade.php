@@ -36,7 +36,7 @@
                                    <td>{{ substr(strip_tags($item->description), 0, 30)   }}</td>
                                    <td>
 
-                                        <img style="width: 60px; height:45px;" src="{{ asset('images/product/'. $image_name[$y++]->name) }}"
+                                        <img style="width: 60px; height:45px;" src="{{ asset('public/images/product/'. $image_name[$y++]->name) }}"
                                              class="card-img-top" alt="...">
 
                                    </td>
