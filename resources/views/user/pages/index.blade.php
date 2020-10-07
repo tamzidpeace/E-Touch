@@ -37,7 +37,8 @@
                     <h3 style="text-align:center;">Categories</h3>
                     <ul class="cate">
                          @foreach ($categories as $item)
-                         <li ><a style="color: black"\ href="#"><i  class="fa fa-arrow-right" aria-hidden="true"></i>{{ $item->name }}</a></li>
+                         <li ><a style="color: black"\ href="{{ route('user.product.category', ['id' => $item->id]) }}">
+                              <i  class="fa fa-arrow-right" aria-hidden="true"></i>{{ $item->name }}</a></li>
                          @endforeach
                     </ul>
                </div>

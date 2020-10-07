@@ -80,12 +80,18 @@ class HomeController extends Controller
             $message = new Contact;
             $message->name = $request->Name;
             $message->email = $request->Email;
-            $message->message = $request->Message;            
+            $message->message = $request->Message;
             $message->save();
             //Alert::alert('Title', 'Message', 'Type');
-            return back();            
+            return back();
         } catch (Exception $e) {
             return $e;
-        }                
+        }
+    }
+
+    public function category(Request $request)
+    {        
+        $products = Product::where('category_id', $request->id)->get();                                      
+        return view('user.pages.category')->with('products', $products);
     }
 }
