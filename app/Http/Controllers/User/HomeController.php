@@ -62,4 +62,8 @@ class HomeController extends Controller
         $data = ['server' => $server, 'image' => $image];        
         return \response(json_encode($data));
     }
+
+    public function about() {
+        return view('user.pages.about');
+    }
 }
