@@ -68,36 +68,14 @@
                 <p>All Products</p>
               </a>
             </li>
-            {{-- <li class="nav-item has-treeview">
-                  <a href="#" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>
-                      Level 2
-                      <i class="right fas fa-angle-left"></i>
-                    </p>
-                  </a>
-                  <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                      <a href="#" class="nav-link">
-                        <i class="far fa-dot-circle nav-icon"></i>
-                        <p>Level 3</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="#" class="nav-link">
-                        <i class="far fa-dot-circle nav-icon"></i>
-                        <p>Level 3</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="#" class="nav-link">
-                        <i class="far fa-dot-circle nav-icon"></i>
-                        <p>Level 3</p>
-                      </a>
-                    </li>
-                  </ul>
-                </li> --}}
+            
           </ul>
+          <li class="nav-item">
+            <a href="{{ route('admin.contact.index') }}" class="nav-link">
+              <i class="fas fa-envelope-open-text nav-icon"></i>
+              <p>Contact</p>
+            </a>
+          </li>
         </li>
       </ul>
     </nav>
