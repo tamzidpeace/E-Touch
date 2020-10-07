@@ -54,4 +54,5 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('product_details', [App\Http\Controllers\User\HomeController::class, 'productDetails'])->name('user.product-details');
     Route::get('ajax_product_images', [App\Http\Controllers\User\HomeController::class, 'ajaxProductImages'])->name('user.product.ajax-product-images');
     Route::get('about', [App\Http\Controllers\User\HomeController::class, 'about'])->name('user.about');
+    Route::get('contact', [App\Http\Controllers\User\HomeController::class, 'contact'])->name('user.contact');
 });

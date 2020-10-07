@@ -15,7 +15,7 @@
                     <h3>Information</h3>
                     <ul class="info"> 
                          <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="{{ route('user.about') }}">About Us</a></li>
-                         <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="contact.html">Contact Us</a></li>
+                         <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="{{ route('user.contact') }}">Contact Us</a></li>
                          
                     </ul>
                </div>

@@ -16,7 +16,7 @@
                     <ul class="nav navbar-nav pull-left">
                          <li class="active"><a href="{{ route('user.home') }}" class="act">Home</a></li>
                          <li><a href="{{ route('user.about') }}">About</a></li>
-                         <li><a href="#">Contact</a></li>
+                         <li><a href="{{ route('user.contact') }}">Contact</a></li>
                     </ul>
                </div>
           </nav>
