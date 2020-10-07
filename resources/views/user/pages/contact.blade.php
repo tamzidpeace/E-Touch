@@ -30,7 +30,8 @@
           <div class="col-md-6 w3_agileits_contact_grid_right">
                <h2 class="w3_agile_header">Leave a<span> Message</span></h2>
 
-               <form action="#" method="post">
+               <form action="{{ route('user.contact.message') }}" method="post">
+                    @csrf     
                     <span class="input input--ichiro">
                          <input class="input__field input__field--ichiro" type="text" id="input-25" name="Name" placeholder=" " required="" />
                          <label class="input__label input__label--ichiro" for="input-25">
