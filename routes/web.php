@@ -54,6 +54,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::group(['middleware' => [], 'prefix' => 'contact'], function () {
         Route::get('index', [ContactController::class, 'index'])->name('admin.contact.index');
         Route::post('destroy', [ContactController::class, 'destroy'])->name('admin.contact.destroy');
+        Route::get('view-message-ajax', [ContactController::class, 'viewMessageAjax'])->name('admin.contact.view-message-ajax');
     });
 });
 

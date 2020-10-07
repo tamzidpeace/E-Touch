@@ -44,11 +44,11 @@
                               <td>{{ $item->email }}</td>
                               <td>{{ substr($item->message, 0, 30) }}...</td>
                               <td>
-                                   <a onclick="edit({{ $item->id }})" data-toggle="modal" data-target="#exampleModal"
-                                        id="editCategory" class="btn btn-info btn-sm">
-                                        <i class="fas fa-pencil-alt">
+                                   <a onclick="viewMessage({{ $item->id }})" data-toggle="modal"
+                                        data-target="#viewModal" id="viewMessage" class="btn btn-info btn-sm">
+                                        <i class="far fa-eye"></i>
                                         </i>
-                                        Edit
+                                        View
                                    </a>
                                    <a onclick="deleteMessage({{ $item->id }})" id="deleteMessage"
                                         class="btn btn-danger btn-sm" href="#" data-toggle="modal"
@@ -72,66 +72,76 @@
 
 
      <!-- add,edit Modal -->
-     {{-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
           aria-hidden="true">
           <div class="modal-dialog" role="document">
                <div class="modal-content">
                     <div class="modal-header">
-                         <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
+                         <h5 class="modal-title" id="exampleModalLabel">Message Details</h5>
                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                          </button>
                     </div>
                     <div class="modal-body">
+                         {{-- Name:<p id="messageName"></p>
+                         Email:<p id="messageEmail"></p>
+                         Message:<p id="messageBody"></p> --}}
 
-                         <form action="{{ route('admin.category.make') }}" method="POST">
-     @csrf
-     <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp"
-               placeholder="Enter name">
-     </div>
-     <div class="form-group">
-          <label for="des">Description</label>
-          <textarea class="form-control" name="description" id="des" name="description"
-               placeholder="Description..."></textarea>
-     </div>
-     <input type="hidden" name="mId" id="mID" value="0">
+                         <div class="card-body">
+                                            
+                              <strong><i class="fas fa-user mr-1"></i> Name</strong>
+              
+                              <p class="text-muted" id="messageName"></p>
+              
+                              <hr>
+              
+                              <strong><i class="fas fa-at mr-1"></i>Email</strong>
+              
+                              <p class="text-muted" id="messageEmail">
+                                
+                              </p>
+              
+                              <hr>
+              
+                              <strong><i class="far fa-file-alt mr-1"></i>Message</strong>
+              
+                              <p class="text-muted" id="messageBody"></p>
+                            </div>
 
-</div>
-<div class="modal-footer">
-     <button type="submit" id="submit" class="btn btn-primary">Submit</button>
-     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-     </form>
-</div>
-</div>
-</div>
-</div> --}}
-
-{{-- end modal  --}}
-
-{{-- delete modal --}}
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-     <div class="modal-dialog" role="document">
-          <div class="modal-content">
-               <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Do you want to delete this Message?</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                         <span aria-hidden="true">&times;</span>
-                    </button>
-               </div>
-               <form action="{{ route('admin.contact.destroy') }}" method="POST">
-                    @csrf
-
-                    <input type="hidden" name="messageID" id="messageID" value="0">
+                         <input type="hidden" name="viewMessageID" id="viewMessageID" value="0">
+                    </div>
                     <div class="modal-footer">
-                         <button type="submit" id="deleteSubmit" class="btn btn-primary">YES</button>
-                         <button type="button" id="deleteNo" class="btn btn-secondary" data-dismiss="modal">NO</button>
-               </form>
+                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+               </div>
           </div>
      </div>
-</div>
+
+     {{-- end modal  --}}
+
+     {{-- delete modal --}}
+     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                    <div class="modal-header">
+                         <h5 class="modal-title" id="exampleModalLabel">Do you want to delete this Message?</h5>
+                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                         </button>
+                    </div>
+                    <form action="{{ route('admin.contact.destroy') }}" method="POST">
+                         @csrf
+
+                         <input type="hidden" name="messageID" id="messageID" value="0">
+                         <div class="modal-footer">
+                              <button type="submit" id="deleteSubmit" class="btn btn-primary">YES</button>
+                              <button type="button" id="deleteNo" class="btn btn-secondary"
+                                   data-dismiss="modal">NO</button>
+                    </form>
+               </div>
+          </div>
+     </div>
 </div>
 
 @endsection
@@ -147,6 +157,23 @@
       "autoWidth": true,
       "responsive": true,
     });
+
+    function viewMessage(id) {
+         //console.log(id);
+         $('#viewMessageID').val(id);
+         $.ajax({
+              url: 'view-message-ajax',
+              type: 'GET',
+              data: {id:id},
+              dataType: 'JSON',
+              success: function(result) {
+               //console.log(result);
+               $('#messageName').append(result.name);
+               $('#messageEmail').text(result.email);
+               $('#messageBody').text(result.message);
+              },
+         });
+    }
 
     function deleteMessage(id) {
           event.preventDefault();

@@ -24,4 +24,9 @@ class ContactController extends Controller
             return $e;
         }
     }
+
+    public function viewMessageAjax(Request $request) {
+        $message = Contact::findOrFail($request->id);
+        return response()->json($message);
+    }
 }
