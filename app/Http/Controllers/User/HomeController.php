@@ -90,8 +90,8 @@ class HomeController extends Controller
     }
 
     public function category(Request $request)
-    {        
-        $products = Product::where('category_id', $request->id)->get();                                      
+    {                
+        $products = Product::where('category_id', $request->id)->paginate(12);        
         return view('user.pages.category')->with('products', $products);
     }
 }

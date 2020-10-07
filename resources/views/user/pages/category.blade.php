@@ -1,4 +1,7 @@
 @extends('user.layouts.master')
+@section('styles')
+    {{-- <link rel="stylesheet" href="{{ asset('public/css/app.css') }}"> --}}
+@endsection
 
 @section('content')
 <div class="products">
@@ -43,8 +46,14 @@
           {{-- <div class="clearfix"> </div> --}}
           
      </div>
-     
+     {{ $products->withQueryString()->links() }}     
+
 </div>
 
 
+@endsection
+
+@section('scripts')
+{{-- <script src="{{ asset('public/js/app.js') }}"></script> --}}
+    
 @endsection
