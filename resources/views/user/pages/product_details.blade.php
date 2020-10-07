@@ -19,7 +19,8 @@
                     <div class="w3agile_description">
                          <h4 > Category: <small style="color: black"><strong>{{ $product->category->name }}</strong></small></h4>  <br>
                          <h4>Description :</h4>
-                         <p style="color: black">{{$product->description}}</p>
+                         <p style="color: black">{{$product->description}}</p><br>
+                         <a target="_blank" href="{{ url('public/files/product/'. $product->file) }}" class="btn btn-info">File</a>
                     </div>
                </div>
 
