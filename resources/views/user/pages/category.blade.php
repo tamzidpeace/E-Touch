@@ -16,8 +16,7 @@
                                         <figure>
                                              <div class="snipcart-item block">
                                                   <div class="snipcart-thumb">
-                                                       <a
-                                                            href="{{ route('user.product-details', ['id' => $item->id]) }}"><img
+                                                       <a style="height: 220px;" href="{{ route('user.product-details', ['id' => $item->id]) }}"><img
                                                                  title=" " alt=" "
                                                                  src="{{ asset('public/images/product/'. $item->productImages->first()->name) }}"></a>
                                                        <p><strong>{{ $item->name }}</strong></p>

@@ -18,7 +18,7 @@ use App\Http\Controllers\Admin\ContactController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(route('user.home'));
 });
 
 Auth::routes();
@@ -29,7 +29,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
     Route::get('dashboard', [HomeController::class, 'index'])->name('admin.dashboard');
     
     // category

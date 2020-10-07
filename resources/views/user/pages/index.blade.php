@@ -37,7 +37,7 @@
                     <h3 style="text-align:center;">Categories</h3>
                     <ul class="cate">
                          @foreach ($categories as $item)
-                         <li ><a style="color: black"\ href="{{ route('user.product.category', ['id' => $item->id]) }}">
+                         <li ><a style="color: black" href="{{ route('user.product.category', ['id' => $item->id]) }}">
                               <i  class="fa fa-arrow-right" aria-hidden="true"></i>{{ $item->name }}</a></li>
                          @endforeach
                     </ul>
@@ -47,14 +47,14 @@
                <div class="agile_top_brands_grids">
                     <?php $x=0?>
                     @foreach ($products as $item)
-                    <div class="col-md-3 top_brand_left">
+                    <div class="col-md-3 top_brand_left" style="margin-bottom: 20px;">
                          <div class="hover14 column">
                               <div class="agile_top_brand_left_grid">                                   
                               <div class="agile_top_brand_left_grid1">
                                    <figure>
                                         <div class="snipcart-item block">
                                              <div class="snipcart-thumb">
-                                                  <a href="{{ route('user.product-details', ['id' => $item->id]) }}"><img title=" " alt=" "
+                                                  <a style="height: 220px;" href="{{ route('user.product-details', ['id' => $item->id]) }}"><img title=" " alt=" "
                                                             src="{{ asset('public/images/product/'. $image_names[$x++]->name) }}"></a>
                                                   <p><strong>{{ $item->name }}</strong></p>                                                  
                                              </div>
