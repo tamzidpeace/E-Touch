@@ -1,5 +1,9 @@
 @extends('user.layouts.master')
 
+@section('title')
+    <title> Etouch | Home </title>
+@endsection
+
 @section('content')
 
 <div class="row">

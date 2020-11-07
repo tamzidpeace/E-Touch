@@ -5,7 +5,8 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <title>E-Commerce</title>
+     @yield('title')
+     {{-- <title>E-Commerce</title> --}}
      @include('user.includes.styles')
      @yield('styles')
      @include('user.includes.navigation')
