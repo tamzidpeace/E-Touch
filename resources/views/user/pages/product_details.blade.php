@@ -30,7 +30,7 @@
                          <?php $x=0; ?>
                          @foreach ($product_images as $item)
                          <div id="productExtraImage"  class="col-md-2 productExtraImages">
-                              <img onclick="getImageID({{ $item->id }})" style="height: 40px; width:40px;" src="{{ asset('public/images/product/'. $item->name) }}" alt="">
+                              <img height="220px;" onclick="getImageID({{ $item->id }})" style="height: 40px; width:40px;" src="{{ asset('public/images/product/'. $item->name) }}" alt="">
                               <form action="#">
                                    <input type="hidden" name="" id="image_no" value="{{ $x++ }}">
                               </form>
@@ -59,7 +59,7 @@
                                         <div class="snipcart-item block">
                                              <div class="snipcart-thumb">
                                                   <a href="{{ route('user.product-details', ['id' => $item->id]) }}"><img
-                                                            title=" " alt=" "
+                                                           height="220px;" title=" " alt=" "
                                                             src="{{ asset('public/images/product/'.$similar_product_images[$i++]->name) }}"></a>
                                                   <p><strong>{{ $item->name }}</strong></p>                                                  
                                              </div>

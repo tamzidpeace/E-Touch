@@ -8,9 +8,9 @@
           <h3 class="w3_agile_header">About Us</h3>
           <div class="about-agileinfo w3layouts">
                <div class="col-md-8 about-wthree-grids grid-top">
-                    <h4>Blanditiis praesentium deleniti atque corrupti quos </h4>
-                    <p class="top">Gnissimos voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi. atque corrupti quos dolores et quas molestias excepturi sint occaecat officia deserunt mollitia laborum et dolorum fuga</p>
-                    <p>Dignissimos at vero eos et accusamus et iusto odio ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecat officia deserunt mollitia laborum et dolorum fuga. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecat atque corrupti quos dolores et quas molestias excepturi sint occaecat officia deserunt mollitia laborum et dolorum </p>		
+                    <h4>Engineering & Automation Item Import , supply and Support.</h4>
+                    <p class="top">E-TOUCH ENGINEERING Ltd began operations in 2010, dedicated to bringing the latest concepts, technology and machinery to the industry of Bangladesh.</p>
+                    
                     <div class="about-w3agilerow">
                          <div class="col-md-4 about-w3imgs">
                               <img src=" {{ asset('public/user/images/p3.jpg') }} " alt="" class="img-responsive zoom-img"/>

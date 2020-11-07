@@ -84,14 +84,15 @@ class HomeController extends Controller
             $message->save();
             //Alert::alert('Title', 'Message', 'Type');
             return back();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return $e;
         }
     }
 
     public function category(Request $request)
     {                
+        $categories = Category::all();
         $products = Product::where('category_id', $request->id)->paginate(12);        
-        return view('user.pages.category')->with('products', $products);
+        return view('user.pages.category')->with('products', $products)->with('categories', $categories);
     }
 }

@@ -4,9 +4,25 @@
 @endsection
 
 @section('content')
+
+
+
 <div class="products">
      <div class="row">
           <div class=" products-right">
+               <div class="col-md-2 products-left">
+                    <div style="margin-top: 40px;" class="categories">
+                         <h3 style="text-align:center;">Categories</h3>
+                         <ul class="cate">
+                              <li ><a style="color: black" href="{{ route('user.home') }}">
+                                   <i  class="fa fa-arrow-right" aria-hidden="true"></i>All</a></li>
+                              @foreach ($categories as $item)
+                              <li ><a style="color: black" href="{{ route('user.product.category', ['id' => $item->id]) }}">
+                                   <i  class="fa fa-arrow-right" aria-hidden="true"></i>{{ $item->name }}</a></li>
+                              @endforeach
+                         </ul>
+                    </div>
+               </div>
                <div class="agile_top_brands_grids">                    
                     @foreach ($products as $item)
                     <div class="col-md-3 top_brand_left" style="margin-bottom: 10px;">
@@ -17,7 +33,7 @@
                                              <div class="snipcart-item block">
                                                   <div class="snipcart-thumb">
                                                        <a style="height: 220px;" href="{{ route('user.product-details', ['id' => $item->id]) }}"><img
-                                                                 title=" " alt=" "
+                                                                height="220px" title=" " alt=" "
                                                                  src="{{ asset('public/images/product/'. $item->productImages->first()->name) }}"></a>
                                                        <p><strong>{{ $item->name }}</strong></p>
                                                   </div>
