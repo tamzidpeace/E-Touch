@@ -7,14 +7,18 @@
                <h1 id="siteName" style=""><a href="{{ route('user.home') }}">E-Touch</a></h1>
           </div>     
         
+
+          
+
      <div class="w3l_search">
-          <form action="#" method="post">
-               <input type="search" name="Search" placeholder="Search" required="">
+          <form action="{{ route('user.product.search') }}" method="get">
+               @csrf
+               <input type="search" name="search" placeholder="Search" >               
                <button type="submit" class="btn btn-default search" aria-label="Left Align">
                     <i class="fa fa-search" aria-hidden="true"> </i>
                </button>
                <div class="clearfix"></div>
-          </form>
+          </form>          
      </div>
           
           <div class="clearfix"> </div>

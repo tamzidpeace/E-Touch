@@ -80,7 +80,7 @@
                <div class="agile_top_brands_grids">
                     <?php $x=0?>
                     @foreach ($products as $item)
-                    <div class="col-md-3 top_brand_left" style="margin-bottom: 20px;">
+                    <div class="col-md-2 top_brand_left" style="margin-bottom: 20px;">
                          <div class="hover14 column">
                               <div class="agile_top_brand_left_grid">                                   
                               <div class="agile_top_brand_left_grid1">

@@ -68,4 +68,5 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('contact', [App\Http\Controllers\User\HomeController::class, 'contact'])->name('user.contact');
     Route::post('contact', [App\Http\Controllers\User\HomeController::class, 'contactMessage'])->name('user.contact.message');
     Route::get('category', [App\Http\Controllers\User\HomeController::class, 'category'])->name('user.product.category');
+    Route::get('search', [App\Http\Controllers\User\HomeController::class, 'search'])->name('user.product.search');
 });

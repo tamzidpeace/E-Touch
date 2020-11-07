@@ -95,4 +95,11 @@ class HomeController extends Controller
         $products = Product::where('category_id', $request->id)->paginate(12);        
         return view('user.pages.category')->with('products', $products)->with('categories', $categories);
     }
+
+    public function search(Request $request) {
+
+        $categories = Category::all();
+        $products = Product::where('name', 'like', '%' . $request->search . '%')->paginate(12);        
+        return view('user.pages.category')->with('products', $products)->with('categories', $categories);
+    }
 }
