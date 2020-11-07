@@ -4,6 +4,35 @@
     <title> Etouch | Home </title>
 @endsection
 
+@section('styles')
+
+     <style>
+          #siteName {
+               margin-left: -50px; margin-top:-60px;
+          }
+
+          #logoImage {
+               margin-left:-325px;
+          }
+          
+
+          @media (max-width:767px) {
+               #logoImage {
+                    margin-left: -180px;
+               }
+
+               #siteName {
+                    margin-left: 30px
+               }
+
+               .w3ls_logo_products_left {
+                    margin-bottom: 40px;
+               }
+          }
+     </style>
+
+@endsection
+
 @section('content')
 
 <div class="row">
@@ -38,7 +67,7 @@
      <div class="row">
           <div class="col-md-2 products-left">
                <div style="margin-top: 40px;" class="categories">
-                    <h3 style="text-align:center;">Categories</h3>
+                    <h3 class="category" style="text-align:center;">Categories</h3>
                     <ul class="cate">
                          @foreach ($categories as $item)
                          <li ><a style="color: black" href="{{ route('user.product.category', ['id' => $item->id]) }}">

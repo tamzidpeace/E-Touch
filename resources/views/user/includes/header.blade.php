@@ -2,9 +2,9 @@
      <div class="container">
           <div class="w3ls_logo_products_left">
                <span>
-                    <img height="80px" style="margin-left:-325px" src="{{ asset('public/images/logo.png') }}" alt="">
+                    <img id="logoImage" height="80px" style="" src="{{ asset('public/images/logo.png') }}" alt="">
                </span>
-               <h1 style="margin-left: -50px; margin-top:-60px;"><a href="{{ route('user.home') }}">E-Touch</a></h1>
+               <h1 id="siteName" style=""><a href="{{ route('user.home') }}">E-Touch</a></h1>
           </div>     
         
      <div class="w3l_search">
