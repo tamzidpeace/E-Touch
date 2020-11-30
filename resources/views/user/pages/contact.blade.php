@@ -16,7 +16,7 @@
                          <p>level 6/A, House: 07, Road: 07, Uttara, Dhaka.</p>
                          <ul class="wthree_contact_info_address">
                               <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="etouchengineering@gmail.com">etouchengineering@gmail.com</a></li>
-                              <li><i class="fa fa-phone" aria-hidden="true"></i>+880-1716-666252</li>
+                              <li><i class="fa fa-phone" aria-hidden="true"></i>+88-0255092122</li>
                          </ul>
                          <div class="w3_agile_social_icons w3_agile_social_icons_contact">
                               <ul>

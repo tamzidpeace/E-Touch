@@ -45,7 +45,7 @@ span.glyphicon.glyphicon-shopping-cart.my-cart-icon.my-cart-icon-affix {
     text-align: center;
 }
 .my-cart-icon-affix i {
-    background: #fe9126 !important;
+    background: #015AAA !important;
 }
 .agile_top_brand_left_grid {
     position: relative;
@@ -85,7 +85,7 @@ input[type="submit"],#PPMiniCart .minicart-submit,.w3ls_vegetables ul li a,input
     color: #fff;
 }
 .w3l_offers p a {
-    color: #fe9126;
+    color: #015AAA;
     text-decoration: none;
 }
 .w3l_search {
@@ -115,7 +115,7 @@ i.fa.fa-phone {
     font-size: 20px;
 }
 button.btn.btn-default.search {
-    background: #fe9126;
+    background: #015AAA;
     padding: 11px 12px 11px;
     float: right;
     outline: none;
@@ -190,7 +190,7 @@ button.w3view-cart:focus{
 }
 .w3ls_logo_products_left h1 a{
 	font-size: 40px;
-    color: #fe9126;
+    color: #015AAA;
     text-decoration: none;
     text-transform: uppercase;
     display: block;
@@ -242,7 +242,7 @@ button.w3view-cart:focus{
 }
 ul.multi-column-dropdown h6 {
     font-size: 20px;
-    color:#fe9126;
+    color:#015AAA;
     margin: 0 0 0em;
     padding-bottom: 1em;
     border-bottom: 1px solid #E4E4E4;
@@ -282,7 +282,7 @@ ul.multi-column-dropdown h6 {
     width: 100%;
 }
 .navigation-agileits {
-    background: #fe9126;
+    background: #015AAA;
 }
 .navbar-nav > li {
     float: left;
@@ -409,7 +409,7 @@ ul.multi-column-dropdown h6 {
     outline: none;
 }
 .agile_top_brand_left_grid:hover .snipcart-details input.button,.snipcart-details input.button:hover{
-    background: #fe9126;
+    background: #015AAA;
 }
 .product_list_header input.button {
     color: #fff;
@@ -417,7 +417,7 @@ ul.multi-column-dropdown h6 {
     outline: none;
     text-transform: capitalize;
     padding: .5em 2.5em .5em 1em;
-    border: 1px solid #fe9126;
+    border: 1px solid #015AAA;
     margin: .35em 0 0;
     background: url(../images/cart.png) no-repeat 116px 9px;
 }
@@ -452,7 +452,7 @@ ul.multi-column-dropdown h6 {
     display: none;
 }
 #PPMiniCart .minicart-submit:hover{
-	background:#fe9126 !important;
+	background:#015AAA !important;
 	border-color: #5b951a !important;
 }
 #PPMiniCart .minicart-subtotal {
@@ -535,13 +535,13 @@ div#myTabContent {
 }
 .nav-tabs>li>a:hover, .nav>li>a:focus {
 	text-decoration: none;
-	background: #fe9126;
+	background: #015AAA;
 	color: #FFF;
 	border:  0px solid transparent;
 }
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
     color: #FFF;
-    background: #fe9126;
+    background: #015AAA;
 	border:  0px solid transparent;
 }
 .nav-tabs {
@@ -778,8 +778,8 @@ i.gray-star {
     font-size: 14px;
 }
 .w3_footer_grid ul.address li i {
-    color:#fe9126;
-    border: 1px solid #fe9126;
+    color:#015AAA;
+    border: 1px solid #015AAA;
     padding: .5em;
     margin-right: 1em;
 }
@@ -792,7 +792,7 @@ i.gray-star {
     text-decoration: none;
 }
 .w3_footer_grid ul li a:hover {
-	color:#fe9126;
+	color:#015AAA;
 }
 .w3_footer_grid h4{
 	margin:2em 0 1em;
@@ -800,7 +800,7 @@ i.gray-star {
 	color:#ff9b05;
 }
 i.fa.fa-arrow-right {
-    color: #fe9126;
+    color: #015AAA;
     margin-right: 10px;
 }
 .footer-copy1{
@@ -829,7 +829,7 @@ i.fa.fa-arrow-right {
 	line-height:1.8em;
 }
 .footer-copy p a{
-	color:#ff9b05;
+	color:#015AAA;
 	text-decoration:none;
 }
 .footer-copy p a:hover{
@@ -936,7 +936,7 @@ a.w3_agile_vimeo:hover{
     margin: 1.5em 0 0;
 }
 .login-form-grids input[type="submit"]:hover{
-	background:#fe9126;
+	background:#015AAA;
 }
 .login-form-grids ::-webkit-input-placeholder{
 	color:#999;
@@ -964,7 +964,7 @@ a.w3_agile_vimeo:hover{
 	text-align:center;
 }
 .login p a{
-	color:#fe9126;
+	color:#015AAA;
 	text-decoration:none;
 	font-size: 1.2em;
 	padding: 0 .5em;
@@ -1064,7 +1064,7 @@ a.w3_agile_vimeo:hover{
 	text-decoration:none;
 }
 .register-home a:hover{
-	background:#fe9126;
+	background:#015AAA;
 }
 /*-- //register --*/
 /*-- checkout --*/
@@ -1085,11 +1085,11 @@ table.timetable_sub {
     background: #004284;
 }
 .timetable_sub th {
-    background: #fe9126;
+    background: #015AAA;
     color: #fff !important;
     text-transform: capitalize;
     font-size: 13px;
-    border-right: 1px solid #fe9126;
+    border-right: 1px solid #015AAA;
 }
 .timetable_sub th, .timetable_sub td {
     text-align: center;
@@ -1229,7 +1229,7 @@ td.invert-image a img {
 	text-decoration:none;
 }
 .checkout-right-basket a:hover{
-	background:#fe9126;
+	background:#015AAA;
 }
 .checkout-right-basket a span {
     left: -.5em;
@@ -1534,7 +1534,7 @@ h3.w3_agile_header:after,h2.w3_agile_header:after{
 }
 .time-top {
     padding: 1em;
-    background-color: #fe9126;
+    background-color: #015AAA;
 }
 .time-top h4 {
     font-size: 1.7em;
@@ -1813,7 +1813,7 @@ a.callbacks1_s3.active,a.callbacks1_s3:focus{
 /*--//slider end here--*/
 /*-- about-slid --*/
 .about-slid{
-	background: url(../images/22.jpg)no-repeat 0px center fixed;
+	background: url(../images/sl1.jpg)no-repeat 0px center fixed;
 	background-size: cover;
 	text-align: center;
 	padding: 6em 0;
@@ -2331,7 +2331,7 @@ h4.m-sing {
 }
 h3.icon-subheading {
     font-size: 28px;
-    color: #fe9126 !important;
+    color: #015AAA !important;
     margin: 30px 0 15px;
     font-weight: 600;
     letter-spacing: 2px;

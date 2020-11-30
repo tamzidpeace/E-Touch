@@ -39,23 +39,23 @@
      <!-- main-slider -->
      <ul id="demo1">
           <li>
-               <img src="{{ asset('public/user/images/11.jpg') }}" alt="" />
+               <img src="{{ asset('public/user/images/sl1.jpg') }}" alt="" />
                <!--Slider Description example-->
                <div class="slide-desc">
-                    <h3>Buy Rice Products Are Now On Line With Us</h3>
+                    <h3> E-TOUCH ENGINEERING LTD began operations in 2010</h3>
                </div>
           </li>
           <li>
-               <img src="{{ asset('public/user/images/22.jpg') }}" alt="" />
+               <img src="{{ asset('public/user/images/sl2.jpg') }}" alt="" />
                <div class="slide-desc">
-                    <h3>Whole Spices Products Are Now On Line With Us</h3>
+                    <h3>We are dedicated to bringing the latest concepts, technology and machinery to the industry of Bangladesh.</h3>
                </div>
           </li>
 
           <li>
-               <img src="{{ asset('public/user/images/44.jpg') }}" alt="" />
+               <img src="{{ asset('public/user/images/sl3.jpg') }}" alt="" />
                <div class="slide-desc">
-                    <h3>Whole Spices Products Are Now On Line With Us</h3>
+                    <h3>We have our team that is build up with professional engineers and technical experts specialized in utility machinery</h3>
                </div>
           </li>
      </ul>
@@ -80,7 +80,7 @@
                <div class="agile_top_brands_grids">
                     <?php $x=0?>
                     @foreach ($products as $item)
-                    <div class="col-md-2 top_brand_left" style="margin-bottom: 20px;">
+                    <div class="col-md-3 top_brand_left" style="margin-bottom: 20px;">
                          <div class="hover14 column">
                               <div class="agile_top_brand_left_grid">                                   
                               <div class="agile_top_brand_left_grid1">
