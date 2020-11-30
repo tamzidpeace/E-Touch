@@ -17,6 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->string('name');
+            $table->string('model_number')->nullable();
             $table->text('description')->nullable();
             $table->string('file')->nullable();
             $table->timestamps();            

@@ -62,6 +62,7 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->category_id = $request->category;
         $product->description = strip_tags($request->description);
+        $product->model_number = $request->model_number;
         
         if ($request->hasfile('file')) {            
             $file = $request->file('file');

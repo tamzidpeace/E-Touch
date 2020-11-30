@@ -22,6 +22,7 @@
                                    <th>Name</th>
                                    <th>Category</th>
                                    <th>Description</th>
+                                   <th>Model Number</th>
                                    <th>Image</th>
                                    <th>Manage</th>
                               </tr>
@@ -34,6 +35,7 @@
                                    <td>{{ $item->name }}</td>
                                    <td>{{ $item->category->name }}</td>
                                    <td>{{ substr(strip_tags($item->description), 0, 30)   }}</td>
+                                   <td>{{ $item->model_number }}</td>
                                    <td>
 
                                         <img style="width: 60px; height:45px;" src="{{ asset('public/images/product/'. $image_name[$y++]->name) }}"
@@ -174,6 +176,13 @@
                                                        <div class="form-group">
                                                             <label>Select File</label>
                                                             <input class="form-control" type="file" name="file" id="pFile">
+                                                       </div>
+                                                  </div>
+
+                                                  <div class="col-md-6">
+                                                       <div class="form-group">
+                                                            <label>Product Model Number</label>
+                                                            <input class="form-control" type="text" name="model_number" id="pModel">
                                                        </div>
                                                   </div>
                               

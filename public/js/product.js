@@ -21,7 +21,7 @@ function deleteProduct(id) {
 }
 
 function view(id) {
-    //console.log(id);
+    console.log(id);
     let product_id = id;
     $.ajax({
         url: 'view',
@@ -41,7 +41,7 @@ function view(id) {
 
 function edit(id) {
     $('#editProductId').val(id);
-    //console.log($('#editProductId').val());
+    console.log(id);
     $.ajax({
         url: 'make-ajax',
         data: {
@@ -52,7 +52,8 @@ function edit(id) {
         success: function (result) {
             $('#editProductName').val(result.name);
             $('#editProductDesc2').text(result.description);
-            //console.log( $('#editProductDesc2').text());
+            $('#pModel').val(result.model_number);
+            console.log( result);
         }
     });
 }

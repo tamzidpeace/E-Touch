@@ -17,7 +17,8 @@
                <div class="col-md-8 agileinfo_single_right">
                     <h2>{{ $product->name }}</h2>
                     <div class="w3agile_description">
-                         <h4 > Category: <small style="color: black"><strong>{{ $product->category->name }}</strong></small></h4>  <br>
+                         <h4 > Category: <small style="color: black"><strong>{{ $product->category->name }}</strong></small></h4>  <br>                         
+                         <h4 > Model Number: <small style="color: black"><strong>{{ $product->model_number }}</strong></small></h4>  <br>                         
                          <h4>Description :</h4>
                          <p style="color: black">{{$product->description}}</p><br>
                          <a target="_blank" href="{{ url('public/files/product/'. $product->file) }}" class="btn btn-info">File</a>

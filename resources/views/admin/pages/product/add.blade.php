@@ -66,6 +66,13 @@
                          </div>
                     </div>
 
+                    <div class="col-md-6">
+                         <div class="form-group">
+                              <label>Product Model Number</label>
+                              <input class="form-control" type="text" name="model_number" id="pModel">
+                         </div>
+                    </div>
+
                     <div class="col-md-12">
                          <div style="" class="form-group">
 
