@@ -45,13 +45,21 @@
                               <td>{{ substr($item->message, 0, 30) }}...</td>
                               <td>
                                    <a onclick="viewMessage({{ $item->id }})" data-toggle="modal"
-                                        data-target="#viewModal" id="viewMessage" class="btn btn-info btn-sm">
+                                        data-target="#viewModal" id="viewMessage"
+                                        class="btn btn-primary btn-sm rounded-pill">
                                         <i class="far fa-eye"></i>
                                         </i>
                                         View
                                    </a>
+
+                                   <a onclick="giveFeedback({{ $item->id }})" href="javascript:;" data-toggle="modal"
+                                        data-target="#feedbackModal" id="feedback"
+                                        class="btn btn-info btn-sm rounded-pill">
+                                        <i class="far fa-check-circle"></i>
+                                        Feedback</a>
+
                                    <a onclick="deleteMessage({{ $item->id }})" id="deleteMessage"
-                                        class="btn btn-danger btn-sm" href="#" data-toggle="modal"
+                                        class="btn btn-danger btn-sm rounded-pill" href="#" data-toggle="modal"
                                         data-target="#deleteModal">
                                         <i class="fas fa-trash">
                                         </i>
@@ -88,25 +96,25 @@
                          Message:<p id="messageBody"></p> --}}
 
                          <div class="card-body">
-                                            
+
                               <strong><i class="fas fa-user mr-1"></i> Name</strong>
-              
+
                               <p class="text-muted" id="messageName"></p>
-              
+
                               <hr>
-              
+
                               <strong><i class="fas fa-at mr-1"></i>Email</strong>
-              
+
                               <p class="text-muted" id="messageEmail">
-                                
+
                               </p>
-              
+
                               <hr>
-              
+
                               <strong><i class="far fa-file-alt mr-1"></i>Message</strong>
-              
+
                               <p class="text-muted" id="messageBody"></p>
-                            </div>
+                         </div>
 
                          <input type="hidden" name="viewMessageID" id="viewMessageID" value="0">
                     </div>
@@ -118,6 +126,46 @@
      </div>
 
      {{-- end modal  --}}
+
+     {{-- feedback modal --}}
+     <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+               <div class="modal-content">
+                    <div class="modal-header">
+                         <h5 class="modal-title" id="exampleModalLabel">Give Feedback</h5>
+                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                         </button>
+                    </div>
+                    <div class="modal-body">
+                         <form action="{{ route('admin.contact.feedback') }}" method="GET">
+                              @csrf
+                              <input type="hidden" name="contact_id" id="contactID">
+                              <div class="form-group row">
+                                   <label for="feebackEmail" class="col-sm-2 col-form-label">To</label>
+                                   <div class="col-sm-10">
+                                        <input type="email" name="feeback_email" class="form-control" id="feedbackEmail"
+                                             placeholder="email@example.com">
+                                   </div>
+                              </div>
+                              <div class="form-group row">
+                                   <label for="feeback" class="col-sm-2 col-form-label">Feedback</label>
+                                   <div class="col-sm-10">
+                                        <textarea class="form-control" name="feedback" id="feedback" cols="30"
+                                             rows="10"></textarea>
+                                   </div>
+                              </div>
+                         
+                    </div>
+                    <div class="modal-footer">
+                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                         <button type="submit" class="btn btn-primary">Send</button>
+                    </form>
+                    </div>
+               </div>
+          </div>
+     </div>
+     {{-- end::feedback modal --}}
 
      {{-- delete modal --}}
      <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -181,6 +229,26 @@
           //console.log($('#dID').val());
           //swal("Done", "", "success");
                
+     }
+
+     function giveFeedback(id) {
+          console.log(id);
+          
+          $('#contactID').val(id);
+
+          $.ajax({
+               'url' : 'get_feedback_eamil',
+               'type' : 'get',
+               data : {id:id},
+               dataType: 'json',
+               success: function(result) {
+                    console.log(result);
+                    $('#feedbackEmail').val(result.email);
+               },
+               error: function(error) {
+                    console.log(error);
+               }
+          });
      }
 </script>
 

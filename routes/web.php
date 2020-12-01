@@ -56,6 +56,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
         Route::get('index', [ContactController::class, 'index'])->name('admin.contact.index');
         Route::post('destroy', [ContactController::class, 'destroy'])->name('admin.contact.destroy');
         Route::get('view-message-ajax', [ContactController::class, 'viewMessageAjax'])->name('admin.contact.view-message-ajax');
+        Route::get('get_feedback_eamil', [ContactController::class, 'getFeedbackEmail']);
+        Route::get('give_feedback', [ContactController::class, 'giveFeedback'])->name('admin.contact.feedback');
     });
 });
 
