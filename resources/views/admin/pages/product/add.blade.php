@@ -43,18 +43,12 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-md-6">
-                         {{-- <div class="form-group">
-                              <label for="files">Select Images</label>
-                              <input class="form-control" type="file" id="pImages" name="p_images[]" multiple>
-                         </div> --}}
-
                          <div class="form-group">
-                              <span class="btn btn-primary add_field">+</span>
-                              <span class="btn btn-danger remove_field">-</span>
-
-                              <div class="input_holder">
-                                   <input type="file" name="p_images[]" id="input_clone" />
-                              </div>
+                              <label for="files">Select Images</label>
+                              {{-- <input class="form-control" type="file" id="pImages" name="p_images[]" multiple> --}}
+                              <input type="file" id="pImages" name="p_images[]" onchange="preview_image();"
+                                   multiple />
+                              <div  id="image_preview"></div>
                          </div>
 
                     </div>
@@ -65,6 +59,7 @@
                               <input class="form-control" type="file" name="file" id="pFile">
                          </div>
                     </div>
+
 
                     <div class="col-md-6">
                          <div class="form-group">
@@ -102,6 +97,25 @@
 @section('scripts')
 
 <script src="{{ asset('js/product.js') }}"></script>
+
+<script>
+     $(document).ready(function() 
+     { 
+      $('form').ajaxForm(function() 
+      {
+       alert("Uploaded SuccessFully");
+      }); 
+     });
+     
+     function preview_image() 
+     {
+      var total_file=document.getElementById("pImages").files.length;
+      for(var i=0;i<total_file;i++)
+      {
+       $('#image_preview').append("<img src='"+URL.createObjectURL(event.target.files[i])+"'>");
+      }
+     }
+</script>
 
 
 @endsection
