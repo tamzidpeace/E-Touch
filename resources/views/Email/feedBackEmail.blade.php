@@ -2,10 +2,8 @@
 # E-Touch
 
 Greetings from E-Touch Engineering LTD.
-
-@component('mail::button', ['url' => ''])
+<br>
 {{ $mailData['feedback'] }}
-@endcomponent
 
 
 

@@ -48,7 +48,7 @@
                               {{-- <input class="form-control" type="file" id="pImages" name="p_images[]" multiple> --}}
                               <input type="file" id="pImages" name="p_images[]" onchange="preview_image();"
                                    multiple />
-                              <div  id="image_preview"></div>
+                              <div   id="image_preview"></div>
                          </div>
 
                     </div>
