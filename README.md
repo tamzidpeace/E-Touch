@@ -1,3 +1,3 @@
-An E-Commerce Site
+Inventory site for Etouch Engineering LTD.
 
-#Demo http://atiar.info/etouch/
+#site url https://www.etouchbd.net/
